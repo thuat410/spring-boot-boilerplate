@@ -8,13 +8,16 @@ CREATE TABLE IF NOT EXISTS `user`
     username   VARCHAR(255) NOT NULL,
     password   VARCHAR(255) NOT NULL,
     email      VARCHAR(255) NOT NULL,
-    status VARCHAR(50) NOT NULL, -- UserStatusEnum, stored as STRING
+    status     VARCHAR(50)  NOT NULL, -- UserStatusEnum, stored as STRING
+    role       VARCHAR(50)  NOT NULL, -- UserRoleEnum, stored as STRING
     created_at TIMESTAMP    NULL,
     updated_at TIMESTAMP    NULL,
     version    BIGINT       NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
     CONSTRAINT chk_user_status
-        CHECK (status IN ('ENABLED', 'DISABLED', 'NOT_VERIFIED'))
+        CHECK (status IN ('ENABLED', 'DISABLED', 'NOT_VERIFIED')),
+    CONSTRAINT chk_user_role
+        CHECK (role IN ('USER', 'ADMIN'))
 );
 
 CREATE TABLE IF NOT EXISTS category

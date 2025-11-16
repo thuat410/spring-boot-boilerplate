@@ -1,5 +1,6 @@
 package com.demo.common.entity.mysql;
 
+import com.demo.common.enums.UserRoleEnum;
 import com.demo.common.enums.UserStatusEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,6 +29,10 @@ public class UserEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private UserStatusEnum status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserRoleEnum role;
 
     @Column(nullable = false)
     private Boolean enabled;
