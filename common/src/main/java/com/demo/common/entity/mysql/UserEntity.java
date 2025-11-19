@@ -33,7 +33,4 @@ public class UserEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private UserRoleEnum role;
-
-    @Column(nullable = false)
-    private Boolean enabled;
 }

@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: ${APPLICATION_PROFILE:local}
+  application:
+    name:  ${APPLICATION_NAME:auth-service}
+    version: 1.0.0
+  cache:
+    type: redis
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
