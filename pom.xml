@@ -10,6 +10,7 @@
     <description>spring-boot-boilerplate</description>
     <modules>
         <module>common</module>
+        <module>mysql-lib</module>
         <module>security</module>
         <module>auth-service</module>
     </modules>

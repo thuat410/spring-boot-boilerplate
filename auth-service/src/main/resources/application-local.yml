@@ -17,7 +17,6 @@ spring:
       host: ${REDIS_HOST:127.0.0.1}
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:password}
-      cache-prefix: ${REDIS_CACHE_PREFIX:inferium}
       client-type: lettuce
       lettuce:
         pool:
@@ -44,3 +43,8 @@ spring:
 logging:
   level:
     root: INFO
+
+jwt:
+  secret: ${JWT_SECRET:change-this-secret-to-64-bytes-min}
+  expiration: ${JWT_EXPIRATION_MS:3600000}
+  issuer: ${JWT_ISSUER:demo-auth}
